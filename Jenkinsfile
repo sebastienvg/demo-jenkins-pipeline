@@ -23,7 +23,14 @@ node {
          checkout([$class: 'GitSCM', branches: [[name: '*/master']], 
          userRemoteConfigs: [[url: 'https://github.com/sebastienvg/demo-vaulted-ansible-vars.git']]]
          )
-    }    
+    } 
+    
+    /*
+    stage('unvault') {
+         ansibleVault([vaultCredentialsId: 'vaultpass', action: 'decrypt' ] 
+         )
+    }
+    */
     
     stage('Running Demo Template on AWX local container') {
         wrap([$class: 'AnsiColorBuildWrapper', colorMapName: "xterm"]) {
