@@ -23,8 +23,9 @@ node {
          checkout([$class: 'GitSCM', branches: [[name: '*/master']], 
          userRemoteConfigs: [[url: 'https://github.com/sebastienvg/demo-vaulted-ansible-vars.git']]]
          )
-        
-    ansibleVault action: 'decrypt /var/jenkins_home/workspace/scm_pipeline/test-file', content: '', input: '', output: '', vaultCredentialsId: 'vault-pass'
+  ansibleVault action: 'decrypt', content: '', input: '/var/jenkins_home/workspace/scm_pipeline/test-file', installation: 'ansible 2.2.1.0', output: '', vaultCredentialsId: 'vault-pass'
+      
+//    ansibleVault action: 'decrypt /var/jenkins_home/workspace/scm_pipeline/test-file', content: '', input: '', output: '', vaultCredentialsId: 'vault-pass'
     
     } 
     
