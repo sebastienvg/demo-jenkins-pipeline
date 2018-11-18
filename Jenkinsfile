@@ -1,4 +1,5 @@
 node {
+    /*
      stage('Update Inventory') {
         wrap([$class: 'AnsiColorBuildWrapper', colorMapName: "xterm"]) {
         ansibleTower(
@@ -16,6 +17,7 @@ node {
         )   
         }
     }
+    */
     stage('stage2') {
         wrap([$class: 'AnsiColorBuildWrapper', colorMapName: "xterm"]) {
         ansibleTower(
@@ -30,7 +32,7 @@ node {
             credential: '',
             extraVars: '''---
             my_var: "$MYVAR" 
-            my_user: "$MY$USER"'''
+            my_user: "$MYUSER"'''
         )
         }
     }
