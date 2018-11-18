@@ -29,7 +29,8 @@ node {
             verbose: true,
             credential: '',
             extraVars: '''---
-            my_var: "$MYVAR"'''
+            my_var: "$MYVAR" 
+            my_user: "$MY$USER"'''
         )
         }
     }
