@@ -18,6 +18,13 @@ node {
         }
     }
     */
+    
+    stage('pull vaulted file') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], 
+                         userRemoteConfigs: [[url: 'http://git-server/user/repository.git']] credentialsId: 'a4f220a9-4744-4b2a-bddb-bf080e3a2871']]]
+            }
+    
     stage('Running Demo Template on AWX local container') {
         wrap([$class: 'AnsiColorBuildWrapper', colorMapName: "xterm"]) {
         ansibleTower(
