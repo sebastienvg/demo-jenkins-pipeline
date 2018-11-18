@@ -24,7 +24,7 @@ node {
          userRemoteConfigs: [[url: 'https://github.com/sebastienvg/demo-vaulted-ansible-vars.git']]]
          )
         
-    ansibleVault action: 'decrypt test-file', content: '', input: '', output: '', vaultCredentialsId: 'vault-pass'
+    ansibleVault action: 'decrypt /var/jenkins_home/workspace/scm_pipeline/test-file', content: '', input: '', output: '', vaultCredentialsId: 'vault-pass'
     
     } 
     
