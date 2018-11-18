@@ -22,7 +22,7 @@ node {
     stage('pull vaulted file') {
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], 
-                         userRemoteConfigs: [[url: 'https://github.com/sebastienvg/demo-vaulted-ansible-vars.git']] [[credentialsId: 'a4f220a9-4744-4b2a-bddb-bf080e3a2871']]]
+                         userRemoteConfigs: [[url: 'https://github.com/sebastienvg/demo-vaulted-ansible-vars.git']]]
             }
     
     stage('Running Demo Template on AWX local container') {
